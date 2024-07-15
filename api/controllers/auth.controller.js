@@ -63,6 +63,8 @@ export const login = async (req,res)=>{
         id:user.id
     },process.env.JWT_SECRET_KEY, {expiresIn:age})
 
+    const {password: userPassword, ...userInfo} = user
+
 
     res.cookie("token", token,{
 
@@ -70,7 +72,9 @@ export const login = async (req,res)=>{
         //secure:true,
         maxAge: age,
 
-    }).status(200).json({massege:"Login Successfully"});
+    })
+    .status(200)
+    .json(userInfo);
         
     } catch (err) {
         console.log(err)
