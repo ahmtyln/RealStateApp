@@ -8,7 +8,7 @@ function Navbar() {
 
   const {currentUser} = useContext(AuthContext);
 
-  const user = true;
+ 
   return (
     <nav>
       <div className="left">
