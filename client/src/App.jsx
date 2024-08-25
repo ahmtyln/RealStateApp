@@ -50,7 +50,7 @@ function App() {
         {
           path:"/profile/update",
           element:<ProfileUpdatePage/>,
-        }
+        },
       ]
     }
   ]);
