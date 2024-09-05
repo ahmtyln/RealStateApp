@@ -3,7 +3,7 @@ import prisma from "../lib/prisma.js"
 
 export const getPosts = async (req,res) =>{
     const query = req.query;
-    console.log(query)
+    // console.log(query)
     try {
         const posts = await prisma.post.findMany({
             where:{
@@ -17,7 +17,11 @@ export const getPosts = async (req,res) =>{
                 },
             }
         });
-        res.status(200).json(posts)
+
+        // setTimeout(() => {
+            res.status(200).json(posts)
+        // }, 2000);
+        
     } catch (err) {
         console.log(err)
         res.status(500).json({message:"Failed to get posts"})
